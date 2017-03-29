@@ -219,9 +219,9 @@ public class PDFController extends Controller {
         table.addCell(getStyledPhrase("Sex: ", outputStringOrNA(patientItem.getSex())));
 
         //[FEMR-113] Contributed by Robert Massicotte during the CEN5035 course at FSU
-        int patientHeightFeet = patientItem.getHeightFeet();
-        int patientHeightInches = patientItem.getHeightInches();
-        if (patientHeightFeet == 0 && patientHeightInches == 0) {
+        Integer patientHeightFeet = patientItem.getHeightFeet();
+        Integer patientHeightInches = patientItem.getHeightInches();
+        if (patientHeightFeet == null && patientHeightInches == null) {
             // display null height as N/A
             table.addCell(getStyledPhrase("Height: ", "N/A"));
         } else {
